@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  measured_value: 1.5
+  measured_at: 2020-03-28 13:14:04
+
+two:
+  measured_value: 1.5
+  measured_at: 2020-03-28 13:14:04
