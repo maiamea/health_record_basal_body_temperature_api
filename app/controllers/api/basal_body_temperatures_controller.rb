@@ -9,6 +9,15 @@ module Api
     end
 
     def create
+      basal_body_temperature = BasalBodyTemperature.new(
+        measured_value: params[:measured_value],
+        measured_at: params[:measured_at],
+      )
+      if basal_body_temperature.save
+        render json: { data: basal_body_temperature }
+      else
+        render json: { status: "ERROR", data: basal_body_temperature.errors }
+      end
     end
 
     def edit
