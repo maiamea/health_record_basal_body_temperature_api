@@ -1,0 +1,2 @@
+class BasalBodyTemperature < ApplicationRecord
+end
