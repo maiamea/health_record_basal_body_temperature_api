@@ -1,4 +1,4 @@
-require_relative 'boot'
+require_relative "boot"
 
 require "rails"
 # Pick the frameworks you want:
@@ -33,5 +33,10 @@ module HealthRecordBasalBodyTemperatureApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Railsの画面上での時刻表示のデフォルトをJSTとする設定
+    config.time_zone = "Tokyo"
+    # 画面上の時刻をDBに保存する際、UTCとして保存する設定
+    config.active_record.default_timezone = :utc
   end
 end
