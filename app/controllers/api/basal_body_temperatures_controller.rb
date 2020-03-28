@@ -27,6 +27,11 @@ module Api
     end
 
     def destroy
+      basal_body_temperature = BasalBodyTemperature.find_by(
+        id: params[:id],
+      )
+      basal_body_temperature.destroy
+      head :no_content
     end
   end
 end
