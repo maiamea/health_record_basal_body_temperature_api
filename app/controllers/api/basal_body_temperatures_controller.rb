@@ -24,6 +24,13 @@ module Api
     end
 
     def update
+      basal_body_temperature = BasalBodyTemperature.find_by(
+        id: params[:id],
+      )
+      basal_body_temperature.measured_value = params[:measured_value]
+      basal_body_temperature.measured_at = params[:measured_at]
+      basal_body_temperature.save
+      render json: basal_body_temperature
     end
 
     def destroy
