@@ -1,7 +1,7 @@
 module Api
   class BasalBodyTemperaturesController < ApplicationController
     def index
-      basal_body_temperatures = BasalBodyTemperature.all
+      basal_body_temperatures = BasalBodyTemperature.all.order(measured_at: :asc)
       render json: { data: basal_body_temperatures }
     end
 

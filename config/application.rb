@@ -38,5 +38,15 @@ module HealthRecordBasalBodyTemperatureApi
     config.time_zone = "Tokyo"
     # 画面上の時刻をDBに保存する際、UTCとして保存する設定
     config.active_record.default_timezone = :utc
+
+    # Permit cross origin
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins "*"
+        resource "*",
+          headers: :any,
+          methods: [:get, :post, :options, :head, :delete]
+      end
+    end
   end
 end
